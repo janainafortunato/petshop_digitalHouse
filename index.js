@@ -34,12 +34,17 @@ let pets = [{
     servicos: ['banho', 'tosa', 'consulta', 'castração', 'exame de sangue', 'vicina']
     },
 
-
 ];
 
 const listarPets = () => {
-    for(let i = 0; i<pets.length; i++ ){
-       console.log(pets[i].nome);
+    /*for(let i = 0; i<pets.length; i++ ){
+      // console.log(pets[i].nome);
+       //console.log(pets[i].nome + " " +pets[i].raca);
+       console.log(`O nome do pet é ${pets[i].nome}`);
+    }*/
+
+    for(let pet of pets){
+        console.log(`O nome do pet é ${pet.nome}, ${pet.tipo}, ${pet.idade}, ${pet.raca}, ${pet.peso}, ${pet.tutor}, ${pet.contato}, ${pet.vacinado}, ${pet.servicos}`);
     }
 }
 

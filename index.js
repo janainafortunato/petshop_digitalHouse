@@ -1,5 +1,6 @@
 const moment = require("moment");
 const fs = require('fs');
+const { Console } = require("console");
 const nomePetshop = "PETSHOP AVANADE";
 let banco_dados = fs.readFileSync('./banco_dados.json', 'utf-8');
 banco_dados = JSON.parse(banco_dados);
@@ -16,7 +17,7 @@ const listarPets = () => {
     }
 }
 
-listarPets();
+//listarPets();
 
 
 const vacinarPet = (pet) => {
@@ -30,7 +31,7 @@ const vacinarPet = (pet) => {
     }
 }
 
-vacinarPet();
+//vacinarPet();
 
 const campanhaVacina = () => {
     let contando = 0;
@@ -47,7 +48,7 @@ const campanhaVacina = () => {
     console.log(`Os pets ${contando}`)
 }
 
-campanhaVacina();
+//campanhaVacina();
 
 const adicionarPet = (novoPet) => {
     banco_dados.pets.push(novoPet);
@@ -56,7 +57,7 @@ const adicionarPet = (novoPet) => {
 
 }
 
-adicionarPet(
+/*adicionarPet(
 
     {"nome":"Saure",
     "tipo":"cachorro",
@@ -67,7 +68,7 @@ adicionarPet(
     "contato":"(11) 99799-3278",
     "vacinado":true,
     "servicos":"['banho', 'tosa', 'consulta', 'castração', 'exame de sangue', 'vicina']"}
-    );
+    );*/
 
 const darBanhoPet = pet => {
         pet.servicos.push({
@@ -77,7 +78,8 @@ const darBanhoPet = pet => {
         atualizarBanco();
         console.log(`${pet.nome} está de banho tomado!`);
     };
-darBanhoPet(banco_dados.pets[0]);
+
+//darBanhoPet(banco_dados.pets[0]);
 
 const tosarPet = (pet) => {
     
@@ -89,7 +91,7 @@ const tosarPet = (pet) => {
   
 }
 
-tosarPet(banco_dados.pets[0]);
+//tosarPet(banco_dados.pets[0]);
 
 const apararUnhasPet = (pet) => {
     
@@ -101,7 +103,15 @@ const apararUnhasPet = (pet) => {
     
 }
 
-apararUnhasPet(banco_dados.pets[0]);
+//apararUnhasPet(banco_dados.pets[0]);
+
+const atenderCliente = (pet, servicos) => {
+    console.log(`Novo atendimento para o pet do tutor ${pet.tutor} com o nome ${pet.nome}`);
+    //servicos.pet;
+    console.log('Volte sempre !!');
+}
+
+atenderCliente(banco_dados.pets[5]);
 
 
 

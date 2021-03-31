@@ -79,7 +79,7 @@ const darBanhoPet = pet => {
         console.log(`${pet.nome} está de banho tomado!`);
     };
 
-//darBanhoPet(banco_dados.pets[0]);
+darBanhoPet(banco_dados.pets[0]);
 
 const tosarPet = (pet) => {
     
@@ -91,7 +91,7 @@ const tosarPet = (pet) => {
   
 }
 
-//tosarPet(banco_dados.pets[0]);
+tosarPet(banco_dados.pets[0]);
 
 const apararUnhasPet = (pet) => {
     
@@ -103,15 +103,35 @@ const apararUnhasPet = (pet) => {
     
 }
 
-//apararUnhasPet(banco_dados.pets[0]);
+apararUnhasPet(banco_dados.pets[0]);
 
 const atenderCliente = (pet, servicos) => {
     console.log(`Novo atendimento para o pet do tutor ${pet.tutor} com o nome ${pet.nome}`);
-    //servicos.pet;
+    servicos(pet)
     console.log('Volte sempre !!');
 }
 
-atenderCliente(banco_dados.pets[5]);
+//chamada da função nas ultima linha
+atenderCliente( banco_dados.pets[0], darBanhoPet );
+
+const buscarPets = banco_dados.pets.map(
+    (pet) => {return pet.nome})
+
+   // console.log('Nome dos pets cadastros no sistema ' + buscarPets);
+
+const PesquisarPets = banco_dados.pets.filter(
+    (pet) => {return pet.peso <= 10 });
+
+   // console.log(PesquisarPets);
+
+const TotalPets = banco_dados.pets.reduce(
+    (total, pet) => {return total + pet.idade;}, 0)
+
+    //console.log(`A idade somanada de todos os pets ${TotalPets}`);
+
+banco_dados.pets.forEach(function(pet){
+    //   console.log(pet.raca);
+    });
 
 
-
+ 
